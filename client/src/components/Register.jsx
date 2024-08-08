@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Login() {
-    return (
-        <div>
-            <dialog id="my_modal_3" className="modal">
-                <div className="modal-box">
+function Register() {
+  return (
+   <>
+   <div className='flex h-screen items-center justify-center '>
+   <div id="my_modal_3" className="border-[2px] shadow-md p-5 rounded-md">
+                <div className="">
                     <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
-                    <h3 className="font-bold text-lg">Login</h3>
+                    <h3 className="font-bold text-lg">Register</h3>
                     {/* {Email} */}
                    <div className='mt-4 space-y-2'>
                     <span>Email</span>
@@ -26,13 +27,14 @@ function Login() {
                     {/* {Button} */}
                     <div className='flex justify-around mt-4'>
                         <button className='bg-red-500 text-white rounded-md px-3 py-1 hover:bg-red-700 duration-200'>Submit</button>
-                        <p>Not registered? <Link to="/register"className='underline text-blue-500 cursor-pointer'>Register</Link></p>
+                        <p>Have account ?{""} <Link
+                         to="/"className='underline text-blue-500 cursor-pointer'>Login</Link></p>
                     </div>
                 </div>
-            </dialog>
-
-        </div>
-    )
+            </div>
+   </div>
+   </>
+  )
 }
 
-export default Login
+export default Register
