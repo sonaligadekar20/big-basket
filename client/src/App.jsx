@@ -1,12 +1,15 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Banner from './components/Banner'
+import React from 'react'; 
+import Home from "./home/Home"
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Banner/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+
+    </Routes>
+    
     </>
   )
 }
