@@ -6,11 +6,23 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const MONGODB_URI = "";
-
 const connectDB = async () => {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
+    try{
+        const conn = await mongoose.connect(process.env.MONGODB_URI);
     if (conn) {
-        console.log('MONGODB connected');
+        console.log('MongoDB connected');
     }
-}
+    }catch(e){
+        console.log(e.message)
+    }
+};
+connectDB();
+
+app.get("/", (req, res) => {
+    res.send("bigBasket App");
+})
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+})
